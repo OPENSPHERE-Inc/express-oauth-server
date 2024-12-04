@@ -19,29 +19,32 @@ declare class ExpressOAuthServer {
 
   constructor(options: ExpressOAuthServer.Options);
 
+  // Should be return void to avoid type errors on express 5
   authenticate(
     options?: OAuth2Server.AuthenticateOptions
   ): (
     request: core.Request,
     response: core.Response,
     next: core.NextFunction
-  ) => Promise<OAuth2Server.Token>;
+  ) => Promise<void>;
 
+  // Should be return void to avoid type errors on express 5
   authorize(
     options?: OAuth2Server.AuthorizeOptions
   ): (
     request: core.Request,
     response: core.Response,
     next: core.NextFunction
-  ) => Promise<OAuth2Server.AuthorizationCode>;
+  ) => Promise<void>;
 
+  // Should be return void to avoid type errors on express 5
   token(
     options?: OAuth2Server.TokenOptions
   ): (
     request: core.Request,
     response: core.Response,
     next: core.NextFunction
-  ) => Promise<OAuth2Server.Token>;
+  ) => Promise<void>;
 }
 
 export = ExpressOAuthServer;
