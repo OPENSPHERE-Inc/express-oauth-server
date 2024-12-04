@@ -4,7 +4,7 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.3
 
-import * as express from "express";
+import core from "express-serve-static-core";
 import * as OAuth2Server from "@node-oauth/oauth2-server";
 
 declare namespace ExpressOAuthServer {
@@ -22,25 +22,25 @@ declare class ExpressOAuthServer {
   authenticate(
     options?: OAuth2Server.AuthenticateOptions
   ): (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction
+    request: core.Request,
+    response: core.Response,
+    next: core.NextFunction
   ) => Promise<OAuth2Server.Token>;
 
   authorize(
     options?: OAuth2Server.AuthorizeOptions
   ): (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction
+    request: core.Request,
+    response: core.Response,
+    next: core.NextFunction
   ) => Promise<OAuth2Server.AuthorizationCode>;
 
   token(
     options?: OAuth2Server.TokenOptions
   ): (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction
+    request: core.Request,
+    response: core.Response,
+    next: core.NextFunction
   ) => Promise<OAuth2Server.Token>;
 }
 
